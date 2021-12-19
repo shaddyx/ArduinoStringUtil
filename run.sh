@@ -8,5 +8,5 @@ docker ps -a | grep $TAG | awk '{print $1}' | xargs docker container rm
 
 docker build . -t $TAG
 
-docker run -it $TAG test
+docker run -it $TAG 
 

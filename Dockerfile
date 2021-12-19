@@ -17,8 +17,12 @@ RUN pip install -U platformio==${APP_VERSION} && \
 
 WORKDIR /workspace
 
-ADD ./ /workspace
+RUN pio platform install "native"
 
-RUN chmod +x entrypoint.sh
+#ADD ./ /workspace
 
-ENTRYPOINT ["./entrypoint.sh"] 
+#RUN chmod +x entrypoint.sh
+
+
+
+#ENTRYPOINT ["./entrypoint.sh"] 

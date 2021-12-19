@@ -6,7 +6,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh "cd ${env.WORKSPACE} && ./entrypoint.sh"
+                sh "cd ${env.WORKSPACE} && ./run_tests.sh"
             }
         }
     }
