@@ -1,6 +1,29 @@
 #include <Arduino.h>
 #include "str_util.h"
 namespace str_util {
+     int atoi(const String &str_value){
+        int num = 0;
+        int i = 0;
+        bool isNegetive = false;
+        auto str = str_value.c_str();
+        if(str[i] == '-'){
+            isNegetive = true;
+            i++;
+        }
+        while (str[i] && (str[i] >= '0' && str[i] <= '9')){
+            num = num * 10 + (str[i] - '0');
+            i++;
+        }
+        if(isNegetive) num = -1 * num;
+        return num;
+    }
+
+    bool parse_bool(const String &str_value){
+        auto lowercased = String(str_value);
+        lowercased.toLowerCase();
+        return lowercased == "true";
+    }
+    
     int substr_count(const String * str, const String * delimiter) {
         int count = 0;
         const char *tmp = str->c_str();

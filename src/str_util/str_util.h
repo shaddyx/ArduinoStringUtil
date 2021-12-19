@@ -1,6 +1,8 @@
 #pragma once
 #include <Arduino.h>
 namespace str_util {
+    int atoi(const String &str_value);
+    bool parse_bool(const String &str_value);
     int substr_count(const String * str, const String * delimiter);
     int substr_count(const String &str, const String &delimiter);
     int token_count(const String * str, const String * delimiter);
