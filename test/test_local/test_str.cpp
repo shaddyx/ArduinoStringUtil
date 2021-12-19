@@ -36,9 +36,26 @@ void test_get_token(){
     TEST_ASSERT_EQUAL_STRING(" retwretoip ", a.c_str());
 }
 
+void test_get_left_token(){
+    auto res = str_util::get_left_token("aaadsdbbbdsdccc", "dsd");
+    TEST_ASSERT_EQUAL_STRING("aaa", res.c_str());
+    res = str_util::get_left_token("aaadsbbbdsccc", "dsd");
+    TEST_ASSERT_EQUAL_STRING("aaadsbbbdsccc", res.c_str());
+}
+
+void test_get_right_token(){
+    auto res = str_util::get_right_token("aaadsdbbbdsdccc", "dsd");
+    TEST_ASSERT_EQUAL_STRING("bbbdsdccc", res.c_str());
+    res = str_util::get_right_token("aaadsbbbdsccc", "dsd");
+    TEST_ASSERT_EQUAL_STRING("", res.c_str());
+}
+
+
 void test_str_main(void){
     RUN_TEST(test_count);
     RUN_TEST(test_indexof);
     RUN_TEST(test_get_token);
+    RUN_TEST(test_get_left_token);
+    RUN_TEST(test_get_right_token);
     //RUN_TEST(test_split);
 }

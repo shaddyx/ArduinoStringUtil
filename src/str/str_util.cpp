@@ -14,6 +14,14 @@ namespace str_util {
         return substr_count(&str, &delimiter);
     }
 
+    int index_of(String * str, String * delimiter){
+        return index_of(str, delimiter, 0);
+    }
+
+     int index_of(String str, String delimiter){
+        return index_of(&str, &delimiter);
+    }
+
     int index_of(String * str, String * delimiter, int number){
         int count = 0;
         const char *tmp = str->c_str();
@@ -55,4 +63,29 @@ namespace str_util {
     String get_token(String str, String delimiter, int number){
         return get_token(&str, &delimiter, number);
     }
+    
+    String get_right_token(String * str, String * delimiter) {
+        auto start = index_of(str, delimiter);
+        if (start != -1){
+            return str ->substring(start + delimiter->length());
+        }
+        return String();
+    }
+    
+    String get_right_token(String str, String delimiter) {
+        return get_right_token(&str, &delimiter);
+    }
+    
+    String get_left_token(String * str, String * delimiter) {
+        auto end = index_of(str, delimiter);
+        if (end != -1){
+            return str ->substring(0, end);
+        }
+        return *str;
+    }
+    
+    String get_left_token(String str, String delimiter) {
+        return get_left_token(&str, &delimiter);
+    }
+
 }
