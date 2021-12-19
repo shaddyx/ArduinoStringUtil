@@ -1,11 +1,6 @@
 #include <unity.h>
 #include "str/str_util.h"
 
-// void test_split(){
-//     auto res = str_util::split("test with delimiter and with another", "with");
-//     TEST_ASSERT_EQUAL(3, res.get_size());
-
-// }
 void test_count(){
    
     auto a = str_util::substr_count("aabba dsd retwretoip dsd fgjklsdfg;m ansmf,.sdfgjkloeqrtoiu dsd asdfjkl;s'dfg", String("dsd"));
