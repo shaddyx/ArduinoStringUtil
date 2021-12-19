@@ -6,7 +6,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh 'pio test -e local'
+                sh "cd ${env.WORKSPACE} && echo 'it works' && pio test -e local"
             }
         }
     }
