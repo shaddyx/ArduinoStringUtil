@@ -4,6 +4,7 @@ namespace str_util {
     int substr_count(const String * str, const String * delimiter);
     int substr_count(const String &str, const String &delimiter);
     int token_count(const String * str, const String * delimiter);
+    int token_count(const String &str, const String &delimiter);
     int index_of(const String * str, const String * delimiter);
     int index_of(const String &str, const String &delimiter);
     int index_of(const String * str, const String * delimiter, int number);

@@ -45,6 +45,11 @@ namespace str_util {
     int token_count(const String * str, const String * delimiter) {
         return substr_count(str, delimiter) + 1;
     }
+
+    int token_count(const String &str, const String &delimiter) {
+        return token_count(str, delimiter);
+    }
+    
     String get_token(const String * str, const String * delimiter, int number){
         auto end = index_of(str, delimiter, number);
         if (number == 0){
