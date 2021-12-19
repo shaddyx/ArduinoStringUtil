@@ -45,12 +45,17 @@ void test_get_right_token(){
     TEST_ASSERT_EQUAL_STRING("", res.c_str());
 }
 
-
+void test_parse(){
+    TEST_ASSERT_EQUAL(10, str_util::parse_int("10"));
+    TEST_ASSERT_EQUAL(11.5, str_util::parse_float("11.5"));
+    TEST_ASSERT_EQUAL(true, str_util::parse_bool("true"));
+    TEST_ASSERT_EQUAL(false, str_util::parse_bool("false"));
+}
 void test_str_main(void){
     RUN_TEST(test_count);
     RUN_TEST(test_indexof);
     RUN_TEST(test_get_token);
     RUN_TEST(test_get_left_token);
     RUN_TEST(test_get_right_token);
-    //RUN_TEST(test_split);
+    RUN_TEST(test_parse);
 }
