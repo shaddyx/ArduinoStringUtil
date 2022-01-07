@@ -18,7 +18,7 @@ namespace str_util {
     int substr_count(const String * str, const String * delimiter) {
         int count = 0;
         const char *tmp = str->c_str();
-        while(tmp = strstr(tmp, delimiter->c_str())){
+        while((tmp = strstr(tmp, delimiter->c_str()))){
             count++;
             tmp+= delimiter->length();
         }
@@ -39,7 +39,7 @@ namespace str_util {
     int index_of(const String * str, const String * delimiter, int number){
         int count = 0;
         const char *tmp = str->c_str();
-        while(tmp = strstr(tmp, delimiter->c_str())){
+        while((tmp = strstr(tmp, delimiter->c_str()))){
             if (count == number){
                 break;
             }
